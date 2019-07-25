@@ -1,0 +1,10 @@
+#!/bin/sh
+PREVIOUS_DIR=$(pwd)
+CURRENTS_DIR=$(cd $(dirname $0); pwd)
+CMDNAME=$(basename $0)
+
+cd ${CURRENTS_DIR}
+
+docker build -t arielase/qmkbuild .
+
+cd ${PREVIOUS_DIR}

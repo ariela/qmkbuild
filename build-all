@@ -1,0 +1,13 @@
+#!/bin/bash
+PREVIOUS_DIR=$(pwd)
+CURRENTS_DIR=$(cd $(dirname $0); pwd)
+CMDNAME=$(basename $0)
+
+KEYBOARD=attack25 KEYMAP=ariela ${CURRENTS_DIR}/build
+KEYBOARD=claw44 KEYMAP=ariela ${CURRENTS_DIR}/build
+KEYBOARD=ergo42 KEYMAP=ariela ${CURRENTS_DIR}/build
+KEYBOARD=fortitude60 KEYMAP=ariela ${CURRENTS_DIR}/build
+KEYBOARD=helix KEYMAP=arielix ${CURRENTS_DIR}/build
+KEYBOARD=namecard2x4 KEYMAP=clipstudio ${CURRENTS_DIR}/build
+KEYBOARD=namecard2x4 KEYMAP=clipstudio4ariela ${CURRENTS_DIR}/build
+KEYBOARD=ut472 KEYMAP=ariela ${CURRENTS_DIR}/build

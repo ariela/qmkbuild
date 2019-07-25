@@ -1,0 +1,14 @@
+#!/bin/sh
+PREVIOUS_DIR=$(pwd)
+CURRENTS_DIR=$(cd $(dirname $0); pwd)
+CMDNAME=$(basename $0)
+
+KEYBOARD=${KEYBOARD:-ergodox_ez}
+KEYMAP=${KEYMAP:-default}
+
+cd ${CURRENTS_DIR}
+
+docker run --rm -e KEYBOARD=${KEYBOARD} -e KEYMAP=${KEYMAP} -v ${CURRENTS_DIR}/qmk_firmware:/qmk:rw arielase/qmkbuild
+mv -f qmk_firmware/*.hex ./
+
+cd ${PREVIOUS_DIR}

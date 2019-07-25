@@ -1,0 +1,5 @@
+qmk_firmware/
+container-build
+build
+build-all
+*.hex
