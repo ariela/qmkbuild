@@ -1,0 +1,15 @@
+FROM alpine:3.10
+
+ENV KEYBOARD=ergodox_ez
+ENV KEYMAP=default
+
+RUN apk add --update-cache --no-cache \
+        build-base \
+        gcc-avr \
+        avr-libc \
+        git \
+    && mkdir -p /qmk_firmware
+
+WORKDIR /qmk_firmware
+
+CMD make ${KEYBOARD}:${KEYMAP}
